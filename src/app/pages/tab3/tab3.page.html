@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Favoritos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  
+  <ion-slides [options]="sliderOpts" *ngIf="dataLovalService.noticias.length === 0">
+    <ion-slide>
+
+      <ion-label>No hay noticias</ion-label>
+
+    </ion-slide>
+  </ion-slides>
+
+  <app-noticias *ngIf="dataLovalService.noticias.length > 0" 
+                [noticias]="dataLovalService.noticias"
+                [enFavoritos]="true"
+                ></app-noticias>
+
+
+</ion-content>
